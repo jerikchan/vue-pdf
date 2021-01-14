@@ -1,28 +1,27 @@
 {
-  "name": "vue-pdf",
-  "version": "4.2.0",
+  "name": "@fk/fai-pdf",
+  "version": "0.1.0",
   "description": "vue.js pdf viewer",
-  "main": "src/vuePdfNoSss.vue",
+  "main": "dist/",
   "scripts": {
-    "serve": "vue-cli-service serve examples/fai-pdf-viewer/main.js",
-    "build": "vue-cli-service build examples/fai-pdf-viewer/main.js",
-    "lib": "vue-cli-service build --target lib examples/fai-pdf-viewer/App.vue"
+    "serve": "vue-cli-service serve examples/viewer/main.js",
+    "build": "vue-cli-service build examples/viewer/main.js",
+    "lib": "vue-cli-service build --target lib src/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FranckFreiburger/vue-pdf.git"
+    "url": "git+http://gitlab.faidev.cc/frontend/fai-pdf.git"
   },
   "keywords": [
     "vue.js",
     "pdf",
     "viewer"
   ],
-  "author": "Franck FREIBURGER",
-  "license": "MIT",
+  "author": "faier",
   "bugs": {
-    "url": "https://github.com/FranckFreiburger/vue-pdf/issues"
+    "url": "http://gitlab.faidev.cc/frontend/fai-pdf/issues"
   },
-  "homepage": "https://github.com/FranckFreiburger/vue-pdf#readme",
+  "homepage": "http://gitlab.faidev.cc/frontend/fai-pdf#readme",
   "dependencies": {
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "loader-utils": "^1.4.0",
@@ -33,7 +32,9 @@
   "peerDependencies": {},
   "devDependencies": {
     "@vue/cli-service": "^4.5.10",
+    "babel-loader": "8.2.2",
     "vue": "^2.6.12",
+    "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.12",
     "worker-loader": "^2.0.0"
   }
