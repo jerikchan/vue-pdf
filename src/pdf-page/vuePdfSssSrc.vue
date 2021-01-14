@@ -9,9 +9,7 @@
 	if ( process.env.VUE_ENV !== 'server' ) {
 
 		if ( typeof window !== 'undefined' && 'Worker' in window ) {
-
-			var PdfjsWorker = require('pdfjs-dist/es5/build/pdf.worker.js');
-			PDFJS.GlobalWorkerOptions.workerPort = new PdfjsWorker();
+			PDFJS.GlobalWorkerOptions.workerSrc= process.env.BASE_URL + 'js/pdf.worker.js';
 		}
 	}
 

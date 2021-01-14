@@ -19,12 +19,12 @@
       </div>
 		</div>
     <div class="pdf-viewer-bar">
-      <div class="pdf-viewer-bar--group-left">
+      <div class="pdf-viewer-bar--group-left" v-show="numPages > 0">
         <div class="pdf-viewer-bar--page-number">{{ currentPageNumber }}/{{ numPages }}</div>
       </div>
       <div class="pdf-viewer-bar--group-right">
-        <div class="pdf-viewer-bar--zomm"></div>
-        <div class="pdf-viewer-bar--fullscreen" :class="{ 'is-disabled': !realFullscreenEnabled }" :title="fullscreenEnabledTitle" @click="toggleFullScreen">
+        <!-- <div class="pdf-viewer-bar--zomm"></div> -->
+        <div v-show="showFullscreen" class="pdf-viewer-bar--fullscreen" :class="{ 'is-disabled': !realFullscreenEnabled }" :title="fullscreenEnabledTitle" @click="toggleFullScreen">
           <svg class="pdf-viewer-bar--fullscreen-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">
             <path d="M1,11H2v1H4v1H0V9H1Zm1,0H3V10H2Zm1-1H4V9H3ZM4,8V9H5V8Zm8,1v2H11v1H9v1h4V9Zm-1,1H10v1h1ZM10,9H9v1h1ZM9,8H8V9H9ZM2,2V3H3V2ZM4,4V5H5V4ZM3,3V4H4V3ZM4,1V0H0V4H1V2H2V1ZM8,5H9V4H8ZM9,0V1h2V2h1V4h1V0Zm1,3h1V2H10ZM9,4h1V3H9Z" fill="#4d4d4d"/>
           </svg>
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import PdfPage from '../pdf/vuePdfNoSss'
+import PdfPage from '../pdf-page/vuePdfSssSrc'
 import { watchScroll, getVisibleElements } from '../utils'
 
 export default {
@@ -54,6 +54,10 @@ export default {
     fullscreenEnabled: {
       type: Boolean,
       default: true
+    },
+    showFullscreen: {
+      type: Boolean,
+      default: true,
     }
   },
 	data () {
