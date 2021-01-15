@@ -34,7 +34,7 @@
   "devDependencies": {
     "@vue/cli-service": "^4.5.10",
     "babel-loader": "8.2.2",
-    "copy-webpack-plugin": "^7.0.0",
+    "copy-webpack-plugin": "6.4.1",
     "vue": "^2.6.12",
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.12",
