@@ -1,3 +1,4 @@
+import './config';
 import PdfViewer from './pdf-viewer/PdfViewer';
 
 export {

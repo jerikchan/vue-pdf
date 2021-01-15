@@ -2,14 +2,14 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "http://fe.faisys.com/office/" : "http://127.0.0.1:8080/",
+  publicPath: process.env.NODE_ENV === 'production' ? '<%=FrontendDef.getDomain()=%>' : '/',
   chainWebpack: config => {
     // config.entry('app').add(require('./node_modules/pdfjs-dist/es5/build/pdf.worker.js'));
     // config.module.noParse(/pdf\.worker\.js/);
 
     // config.module.rule('worker').test(/\.worker\.js$/).use('worker-loader').loader('worker-loader');
-    config.output.filename('js/[name].js');
-    config.output.chunkFilename('js/[name].js');
+    // config.output.filename('js/[name].js');
+    // config.output.chunkFilename('js/[name].js');
 
     const svgRule = config.module.rule('svg');
     config.module.rule('svg').uses.clear();

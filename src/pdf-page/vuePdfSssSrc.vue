@@ -9,7 +9,8 @@
 	if ( process.env.VUE_ENV !== 'server' ) {
 
 		if ( typeof window !== 'undefined' && 'Worker' in window ) {
-			PDFJS.GlobalWorkerOptions.workerSrc= process.env.BASE_URL + 'js/pdf.worker.js';
+      PDFJS.GlobalWorkerOptions.workerSrc= __webpack_public_path__ + 'js/pdf.worker.js';
+      debugger
 		}
 	}
 
