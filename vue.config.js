@@ -1,10 +1,8 @@
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
-const publicPath = process.env.NODE_ENV === 'production' ? '<%=FileStg.getFrontEndResRoot()=%>' : '/'
-
 module.exports = {
-  publicPath,
+  publicPath: process.env.VUE_APP_CDN_URL,
   chainWebpack: config => {
     const svgRule = config.module.rule('svg');
     config.module.rule('svg').uses.clear();
@@ -51,7 +49,7 @@ module.exports = {
     config.plugin("copy").use(CopyWebpackPlugin, [{
       patterns: [{
         from: path.resolve("node_modules", "pdfjs-dist/es5/build/pdf.worker.js"),
-        to: path.resolve(config.output.get("path"), "js")
+        to: path.resolve(config.output.get("path"), process.env.VUE_APP_PDF_WORKER_URL),
       }]
     }])
 
